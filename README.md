@@ -5,7 +5,7 @@ the repo contains the following test profiles, each setup so as to ensure that t
 
 1. _**Debug**_\
    runs the bench with logging for debugging. 
-2. _**Control**_
+2. _**Control**_\
    runs the bench without calling the push/pop methods. for use in determining language-specific overhead.
 4. _**Raw**_\
    runs the only the workload of the benchmark. no timing. intended for use with perf.
