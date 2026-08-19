@@ -1,5 +1,20 @@
 # spsc-ringbuffer-testbench-hs
-testbench code for haskell spsc-ringbuffer libraries.
+testbench for lock-free haskell spsc-ringbuffer libraries.
+
+at this time (20:46, 19/08/2026), the repo contains the following three test-profiles, each setup so as to ensure that the ring buffer itself never fills up:
+
+1. control\
+   runs the bench without calling any of the push/pop methods. intended for use in determining overhead of language. 
+3. raw\
+   runs the only the workload of the benchmark. no timing. intended for use with perf.
+4. timed\
+   runs a timed workload. t0 is taken at the instant before the producer (and therefore strictly before the consumer) starts. t1 is taken at the instant after the consumer (and therefore strictly after the producer) finishes. the result is time taken to complete some given number of operations (write + corresponding read). intended to determine throughput.
+5. sampled\
+   the features of timed + samples per-operation latencies. dumps the results (somwhere). the intention behind timing this test itself is for comparison against a pure timed test to determine the magnitude of the observer effect (how measurements are affected from sampling per-op latencies).
+
+
+
+
 
 the library must define the module `RingBuffer.SPSC` with the following export list:
 
