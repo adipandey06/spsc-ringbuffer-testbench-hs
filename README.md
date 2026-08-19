@@ -1,7 +1,7 @@
 # spsc-ringbuffer-testbench-hs
 testbench for lock-free haskell spsc-ringbuffer libraries.
 
-at this time (20:46, 19/08/2026), the repo contains the following three test-profiles, each setup so as to ensure that the ring buffer itself never fills up:
+the repo contains the following test profiles, each setup so as to ensure that the ring buffer itself never fills up:
 
 1. _**Debug**_\
    runs the bench with logging for debugging. 
